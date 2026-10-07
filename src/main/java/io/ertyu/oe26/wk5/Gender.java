@@ -13,33 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package oe26.wk5;
+package io.ertyu.oe26.wk5;
 
 /**
  *
  * @author Jonathan Chang, Chun-yien <ccy@musicapoetica.org>
  */
-public class Student extends Person {
+public enum Gender {
 
-  String studentID;
-  String dept;
-
-  public Student(String ID, String name) {
-    super(ID, name);
-  }
-
-  public void setStudentID(String studnetID) {
-
-    this.studentID = studnetID;
-  }
-
-  public void setDept(String dept) {
-
-    this.dept = dept;
-  }
-
-  public void printStudent() {
-
-    System.out.println(this.studentID + "\t" + this.name + "\t" + this.dept);
-  }
+  Male, Female, NonBinary
 }

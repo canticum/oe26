@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package oe26.wk5;
+package io.ertyu.oe26.wk5;
 
 /**
  *
@@ -26,18 +26,19 @@ public class Person {
   public String ID;
 
   public Person(String ID, String name) {
-    
+
     this.name = name;
     this.ID = ID;
   }
-  
-  public void printPerson(){
-    
-    System.out.println(ID + "\t" + name);
+
+  public void setGender(Gender gender) {
+
+    this.gender = gender;
+  }
+
+  public void printPerson() {
+
+    System.out.println(ID + "\t" + name + "\t" + this.gender);
   }
 }
 
-enum Gender {
-  Male, Female, NonBinary
-
-}
