@@ -23,12 +23,12 @@ public class Person {
 
   public String name;
   public Gender gender;
-  public String ID;
+  public String id;
 
-  public Person(String ID, String name) {
+  public Person(String id, String name) {
 
     this.name = name;
-    this.ID = ID;
+    this.id = id;
   }
 
   public void setGender(Gender gender) {
@@ -38,7 +38,7 @@ public class Person {
 
   public void printPerson() {
 
-    System.out.println(ID + "\t" + name + "\t" + this.gender);
+    System.out.println(this.id + "\t" + this.name + "\t" + this.gender);
   }
 }
 

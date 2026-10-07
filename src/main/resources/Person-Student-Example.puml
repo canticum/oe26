@@ -1,0 +1,26 @@
+@startuml
+
+' Uncomment to show +, -, #, ~ instead of visibility icons:
+' skinparam classAttributeIconSize 0
+
+' Visibility:
+' + public          accessible from anywhere
+' ~ package-private accessible within the same package
+' # protected       accessible within the same package and by subclasses
+' - private         accessible only within the same class
+
+class Person {
+    + id: String
+    + name: String
+    + gender: Gender
+}
+
+class Student {
+    - studentId: String
+    - dept: String
+}
+
+Person <|-- Student
+' or Student -up-|> Person
+
+@enduml

@@ -21,17 +21,17 @@ package io.ertyu.oe26.wk5;
  */
 public class Student extends Person {
 
-  String studentID;
+  String studentId;
   String dept;
 
-  public Student(String ID, String name) {
+  public Student(String id, String name) {
     
-    super(ID, name);
+    super(id, name);
   }
 
-  public void setStudentID(String studnetID) {
+  public void setStudentId(String studnetId) {
 
-    this.studentID = studnetID;
+    this.studentId = studnetId;
   }
 
   public void setDept(String dept) {
@@ -41,6 +41,6 @@ public class Student extends Person {
 
   public void printStudent() {
 
-    System.out.println(this.studentID + "\t" + this.name + "\t" + this.dept);
+    System.out.println(this.studentId + "\t" + this.name + "\t" + this.dept);
   }
 }
