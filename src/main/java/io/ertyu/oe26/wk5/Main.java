@@ -14,13 +14,13 @@ public class Main {
     s2.setStudentID("411551255");
     s2.setDept("Computer Science");
 
-    System.out.println("printPerson():");
+    System.out.println("=== printPerson() ===");
     s1.printPerson();
     s2.printPerson();
 
     System.out.println();
 
-    System.out.println("printStudent():");
+    System.out.println("=== printStudent() ===");
     s1.printStudent();
     s2.printStudent();
 
