@@ -31,6 +31,8 @@ public class Triple {
 
     String ns = "https://example.org/course/";
 
+    model.setNsPrefix("course", ns);
+    
     var a = model.createResource(ns + "student_a");
     var b = model.createResource(ns + "student_b");
     var t = model.createResource(ns + "tutor_t");
@@ -39,10 +41,11 @@ public class Triple {
     var studentOf = model.createProperty(ns + "studentOf");
 
     var stmt1 = model.createStatement(a, friendOf, b);
-    var stmt2 = model.createStatement(b, studentOf, t);
-    var stmt3 = model.createStatement(a, studentOf, t);   
+    var stmt2 = model.createStatement(b, friendOf, a);
+    var stmt3 = model.createStatement(b, studentOf, t);
+    var stmt4 = model.createStatement(a, studentOf, t);   
 
-    model.add(List.of(stmt1, stmt2, stmt3));
+    model.add(List.of(stmt1, stmt2, stmt3, stmt4));
 
     model.write(System.out, "Turtle");
   }
