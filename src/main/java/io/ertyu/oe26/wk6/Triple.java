@@ -18,6 +18,8 @@ package io.ertyu.oe26.wk6;
 import java.util.List;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
 
 /**
  *
@@ -48,6 +50,8 @@ public class Triple {
     model.add(List.of(stmt1, stmt2, stmt3, stmt4));
 
     model.write(System.out, "Turtle");
+    
+    RDFDataMgr.write(System.out, model, Lang.TTL); // RDFDataMgr工具物件提供更多選項
   }
 
 }
