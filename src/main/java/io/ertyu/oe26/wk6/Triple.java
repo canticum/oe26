@@ -15,7 +15,7 @@
  */
 package io.ertyu.oe26.wk6;
 
-import org.apache.jena.assembler.Mode;
+import java.util.List;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 
@@ -33,13 +33,17 @@ public class Triple {
 
     var a = model.createResource(ns + "student_a");
     var b = model.createResource(ns + "student_b");
+    var t = model.createResource(ns + "tutor_t");
 
     var friendOf = model.createProperty(ns + "friendOf");
-    
-    var statement = model.createStatement(a, friendOf, b);
-    
-    model.add(statement);
-    
+    var studentOf = model.createProperty(ns + "studentOf");
+
+    var stmt1 = model.createStatement(a, friendOf, b);
+    var stmt2 = model.createStatement(b, studentOf, t);
+    var stmt3 = model.createStatement(a, studentOf, t);   
+
+    model.add(List.of(stmt1, stmt2, stmt3));
+
     model.write(System.out, "Turtle");
   }
 
