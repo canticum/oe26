@@ -1,0 +1,26 @@
+@prefix :        <https://example.org/ontology#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+
+<https://example.org/ontology>
+    a owl:Ontology ;
+    dcterms:title "Ontology Title"@en ;
+    dcterms:description "Ontology description."@en ;
+    dcterms:creator "Creator Name" ;
+    dcterms:created "2026-01-01"^^xsd:date ;
+    dcterms:modified "2026-01-01"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "" ;
+    vann:preferredNamespaceUri "https://example.org/ontology#" ;
+    owl:versionIRI <https://example.org/ontology/0.1.0> ;
+    owl:versionInfo "0.1.0" ;
+    rdfs:comment "Initial ontology template."@en .
+

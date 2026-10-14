@@ -21,14 +21,34 @@ package io.ertyu.oe26.wk5;
  */
 public class Person {
 
-  public String name;
-  public Gender gender;
-  public String id;
+  private String name;
+  private Gender gender;
+  private String id;
 
   public Person(String id, String name) {
 
     this.name = name;
     this.id = id;
+  }
+  
+  public String getId(){
+  
+    return this.id;
+  }
+
+  public String getName() {
+
+    return this.name;
+  }
+
+  public void setName(String name) {
+
+    this.name = name;
+  }
+
+  public Gender getGender() {
+
+    return this.gender;
   }
 
   public void setGender(Gender gender) {
@@ -41,4 +61,3 @@ public class Person {
     System.out.println(this.id + "\t" + this.name + "\t" + this.gender);
   }
 }
-
