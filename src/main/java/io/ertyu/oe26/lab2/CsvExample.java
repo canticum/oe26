@@ -25,8 +25,9 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
 /**
- * 這段程式示範如何使用 Apache Common CSV 將資料由 csv 檔讀出來、以及 transcript 的解析方式--使用字串方法
- * split()。
+ * This example demonstrates how to use Apache Commons CSV to read data from a
+ * CSV file and how to parse the transcript field using the string method
+ * split().
  *
  * @author Jonathan Chang, Chun-yien <ccy@musicapoetica.org>
  */
@@ -35,8 +36,12 @@ public class CsvExample {
   private static Path data_source;
 
   /**
-   * 首欄標題，亦可直接使用字串取值，如 <code>record.get("student_id");</code>。注意若設定了
-   * .setHeader(Header.class) 的話，它將直接按順序對應 csv 的 header 欄，因此名稱無須相同。
+   * The first column contains the header names. You may also retrieve a value
+   * directly by its header string, for example,
+   * <code>record.get("student_id")</code>. Note that if
+   * .setHeader(Header.class) is used, the enum constants are mapped to the CSV
+   * columns by position, so their names do not need to match the CSV header
+   * names exactly.
    */
   enum Header {
 

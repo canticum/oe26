@@ -15,6 +15,10 @@
  */
 package io.ertyu.oe26.wk6;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -34,7 +38,7 @@ public class Triple {
     String ns = "https://example.org/course/";
 
     model.setNsPrefix("course", ns);
-    
+
     var a = model.createResource(ns + "student_a");
     var b = model.createResource(ns + "student_b");
     var t = model.createResource(ns + "tutor_t");
@@ -45,13 +49,20 @@ public class Triple {
     var stmt1 = model.createStatement(a, friendOf, b);
     var stmt2 = model.createStatement(b, friendOf, a);
     var stmt3 = model.createStatement(b, studentOf, t);
-    var stmt4 = model.createStatement(a, studentOf, t);   
+    var stmt4 = model.createStatement(a, studentOf, t);
 
     model.add(List.of(stmt1, stmt2, stmt3, stmt4));
 
     model.write(System.out, "Turtle");
-    
-    RDFDataMgr.write(System.out, model, Lang.TTL); // RDFDataMgr工具物件提供更多選項
+
+    // RDFDataMgr is a utility class for reading and writing RDF data.
+    RDFDataMgr.write(System.out, model, Lang.TTL);
+
+    try (var out = Files.newOutputStream(Path.of("output.ttl"))) {
+      RDFDataMgr.write(out, model, Lang.TURTLE); 
+    } catch (IOException ex) {
+      System.out.println("資料寫入失敗。");
+    }
   }
 
 }
