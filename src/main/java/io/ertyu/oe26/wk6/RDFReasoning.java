@@ -42,6 +42,8 @@ public class RDFReasoning {
 //asserted
     var tutor_b = model.createResource(ns + "tutor_b");
     student_a.addProperty(studentOf, tutor_b);
+    
+    model.write(System.out, "TTL");
   }
 
 }
