@@ -25,8 +25,6 @@ public class StarWars {
     String wdt = "http://www.wikidata.org/prop/direct/";
     String sw = "https://example.org/starwars/";
 
-    model.setNsPrefix("wd", wd);
-
     try (var outs = Files.newOutputStream(Path.of("star_wars_planets_dataset_wd.ttl"))) {
       model.write(outs, "TTL");
     }
@@ -102,7 +100,7 @@ public class StarWars {
       planets.close();
     }
 
-    var destination = Path.of("planet_model.ttl");
+    var destination = Path.of("output", "planet_model.ttl");
     try (var outs = Files.newOutputStream(destination)) {
       planetModel.write(outs, "TTL");
     } catch (IOException ex) {
