@@ -15,12 +15,8 @@
  */
 package io.ertyu.oe26.sw;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayDeque;
 import java.util.HashSet;
-import org.apache.jena.query.Query;
 
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.ResultSetFormatter;
