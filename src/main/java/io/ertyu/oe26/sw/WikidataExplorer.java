@@ -17,7 +17,8 @@ public class WikidataExplorer {
     model.listSubjects().toList()
             .stream()
             .filter(r -> r.getLocalName().startsWith("Q"))
-            .map(r -> r.getLocalName() + "\t" + (Objects.isNull(r.getProperty(RDFS.label)) ? null : r.getProperty(RDFS.label).getString()))
+            .filter(r -> Objects.nonNull(r.getProperty(RDFS.label)))
+            .map(r -> r.getLocalName() + "\t" + r.getProperty(RDFS.label).getString())
             .forEach(System.out::println);
 
   }
